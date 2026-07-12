@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   checks:
-    name: Lint and Typecheck
+    name: Lint, Typecheck and Test
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -36,3 +36,6 @@ jobs:
 
       - name: Run typecheck
         run: npm run typecheck
+
+      - name: Run tests
+        run: npm run test -- --runInBand
